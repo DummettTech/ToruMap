@@ -19,7 +19,7 @@ const view = new View({
   minZoom: minZoom,
   maxZoom: maxZoom,
   extent: imageExtent,
-  center: [imageWidth / 2, imageHeight / 2],
+  center: [imageWidth, imageHeight / 4],
   resolutions: resolutions,
   zoom: 1,
 });
