@@ -5,13 +5,11 @@ import Static from "ol/source/ImageStatic";
 
 const imageHeight = 1938;
 const imageWidth = 3206;
-
 const imageExtent = [0, 0, imageWidth, imageHeight];
-
-// Calculate resolutions for zoom levels
-const maxZoom = 5;
 const minZoom = 1;
-const maxResolution = Math.max(imageWidth, imageHeight) / 256;
+const maxResolution = Math.max(imageWidth, imageHeight) / 8;
+const minResolution = 1;
+const maxZoom = Math.ceil(Math.log2(maxResolution / minResolution));
 const resolutions = Array.from(
   { length: maxZoom + 1 },
   (_, z) => maxResolution / Math.pow(2, z)
@@ -23,8 +21,8 @@ const view = new View({
   extent: imageExtent,
   center: [imageWidth / 2, imageHeight / 2],
   resolutions: resolutions,
+  zoom: 1,
 });
-
 const map = new Map({
   target: "map",
   layers: [
@@ -37,6 +35,3 @@ const map = new Map({
   ],
   view: view,
 });
-
-// Fit the view to the image extent so the whole image is visible
-view.fit(imageExtent);
