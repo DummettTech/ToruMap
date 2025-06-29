@@ -1,18 +1,31 @@
-# OpenLayers + Vite
+# ToruMap2
 
-This example demonstrates how the `ol` package can be used with [Vite](https://vitejs.dev/).
+A simple OpenLayers + Vite map viewer for a static image.
 
-To get started, run the following (requires Node 14+):
+## Getting Started
 
-    npx create-ol-app my-app --template vite
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Start the development server:
+   ```sh
+   npm start
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Then change into your new `my-app` directory and start a development server (available at http://localhost:5173):
+## Build for Production
 
-    cd my-app
-    npm start
+```
+npm run build
+```
 
-To generate a build ready for production:
+## Preview Production Build
 
-    npm run build
+```
+npm run serve
+```
 
-Then deploy the contents of the `dist` directory to your server.  You can also run `npm run serve` to serve the results of the `dist` directory for preview.
+## License
+
+MIT

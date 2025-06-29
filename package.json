@@ -1,13 +1,14 @@
 {
   "name": "my-app",
   "version": "1.0.0",
+  "description": "A simple OpenLayers + Vite map viewer for Torucon Map 2025",
+  "author": "",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "npm run build && vite preview"
   },
   "devDependencies": {
-    "cpx": "latest",
     "vite": "latest"
   },
   "dependencies": {

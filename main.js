@@ -5,40 +5,33 @@ import Static from "ol/source/ImageStatic";
 
 const imageHeight = 1938;
 const imageWidth = 3206;
-
 const imageExtent = [0, 0, imageWidth, imageHeight];
+const minZoom = 1;
+const maxResolution = Math.max(imageWidth, imageHeight) / 8;
+const minResolution = 1;
+const maxZoom = Math.ceil(Math.log2(maxResolution / minResolution));
+const resolutions = Array.from(
+  { length: maxZoom + 1 },
+  (_, z) => maxResolution / Math.pow(2, z)
+);
 
-const img = new window.Image();
-img.src = "blank_map.jpg";
-
-img.onload = () => {
-  const view = new View({
-    minZoom: 1,
-    maxZoom: 8,
-    extent: imageExtent,
-  });
-  const map = new Map({
-    target: "map",
-    layers: [
-      new ImageLayer({
-        source: new Static({
-          url: img.src,
-          imageExtent: imageExtent,
-        }),
+const view = new View({
+  minZoom: minZoom,
+  maxZoom: maxZoom,
+  extent: imageExtent,
+  center: [imageWidth / 2, imageHeight / 2],
+  resolutions: resolutions,
+  zoom: 1,
+});
+const map = new Map({
+  target: "map",
+  layers: [
+    new ImageLayer({
+      source: new Static({
+        url: "blank_map.jpg",
+        imageExtent: imageExtent,
       }),
-    ],
-    view: view,
-  });
-
-  // Fit the view to the image extent
-  view.fit(imageExtent, { size: map.getSize() });
-
-  // Update size after image load and after window load
-  const updateMapSize = () => {
-    map.updateSize();
-    view.fit(imageExtent, { size: map.getSize() });
-  };
-  setTimeout(updateMapSize, 100);
-  window.addEventListener("resize", updateMapSize);
-  window.addEventListener("load", updateMapSize);
-};
+    }),
+  ],
+  view: view,
+});
