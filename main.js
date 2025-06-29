@@ -2,6 +2,14 @@ import "./style.css";
 import { Map, View } from "ol";
 import ImageLayer from "ol/layer/Image";
 import Static from "ol/source/ImageStatic";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import {
+  convertMapAreas,
+  handleAreaPopups,
+  positionDrawer,
+} from "./lib/helpers";
+import { mapAreas } from "./lib/mapFeatures";
 
 const imageHeight = 1938;
 const imageWidth = 3206;
@@ -35,3 +43,12 @@ const map = new Map({
   ],
   view: view,
 });
+
+const areaFeatures = convertMapAreas(mapAreas);
+
+const areaVectorSource = new VectorSource({ features: areaFeatures });
+const areaVectorLayer = new VectorLayer({ source: areaVectorSource });
+map.addLayer(areaVectorLayer);
+
+handleAreaPopups(map, areaFeatures);
+positionDrawer(map);
