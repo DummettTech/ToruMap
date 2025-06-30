@@ -11,33 +11,36 @@ import {
 } from "./lib/helpers";
 import { mapAreas } from "./lib/mapFeatures";
 
+const mapDiv = document.getElementById("map");
+const mapWidth = mapDiv ? mapDiv.clientWidth : window.innerWidth;
+const mapHeight = mapDiv ? mapDiv.clientHeight : window.innerHeight;
+
+// TODO: rework to get image dimensions dynamically
 const imageHeight = 1938;
 const imageWidth = 3206;
-const imageExtent = [0, 0, imageWidth, imageHeight];
-const minZoom = 1;
-const maxResolution = Math.max(imageWidth, imageHeight) / 8;
-const minResolution = 1;
-const maxZoom = Math.ceil(Math.log2(maxResolution / minResolution));
-const resolutions = Array.from(
-  { length: maxZoom + 1 },
-  (_, z) => maxResolution / Math.pow(2, z)
-);
+
+const resolutionX = imageWidth / mapWidth;
+const resolutionY = imageHeight / mapHeight;
+const maxZoom = Math.ceil(Math.log2(Math.max(resolutionX, resolutionY) / 1));
 
 const view = new View({
-  minZoom: minZoom,
+  minZoom: 0,
   maxZoom: maxZoom,
-  extent: imageExtent,
-  center: [imageWidth, imageHeight / 4],
-  resolutions: resolutions,
-  zoom: 1,
+  extent: [-500, -500, imageWidth + 500, imageHeight + 500],
+  center: [imageWidth / 2, imageHeight / 2],
+  maxResolution: 2,
+  minResolution: 0.25,
+  zoom: 0,
 });
+
+// TODO: move into helpers
 const map = new Map({
   target: "map",
   layers: [
     new ImageLayer({
       source: new Static({
         url: "blank_map.jpg",
-        imageExtent: imageExtent,
+        imageExtent: [0, 0, imageWidth, imageHeight],
       }),
     }),
   ],
@@ -46,6 +49,7 @@ const map = new Map({
 
 const areaFeatures = convertMapAreas(mapAreas);
 
+// TODO: move into helpers
 const areaVectorSource = new VectorSource({ features: areaFeatures });
 const areaVectorLayer = new VectorLayer({ source: areaVectorSource });
 map.addLayer(areaVectorLayer);
