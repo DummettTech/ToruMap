@@ -2,12 +2,17 @@ import "./style.css";
 import { Map, View } from "ol";
 import ImageLayer from "ol/layer/Image";
 import Static from "ol/source/ImageStatic";
-import VectorLayer from "ol/layer/Vector";
-import VectorSource from "ol/source/Vector";
-import { handleAreaPopups, positionDrawer } from "./lib/helpers";
+import {
+  handleAreaPopups,
+  positionDrawer,
+  createAreaVectorSource,
+  createAreaVectorLayer,
+  getZoom,
+  handleAreaShowHide,
+} from "./lib/helpers";
 import { mapAreas } from "./lib/mapFeatures";
 
-const mapString = false ? "blank_map.jpg" : "map_plan.jpg";
+const mapString = true ? "blank_map.jpg" : "map_plan.jpg";
 const mapDiv = document.getElementById("map");
 const mapWidth = mapDiv ? mapDiv.clientWidth : window.innerWidth;
 const mapHeight = mapDiv ? mapDiv.clientHeight : window.innerHeight;
@@ -30,7 +35,6 @@ const view = new View({
   zoom: 0,
 });
 
-// TODO: move into helpers
 const map = new Map({
   target: "map",
   layers: [
@@ -44,33 +48,15 @@ const map = new Map({
   view: view,
 });
 
-// TODO: move into helpers
-const areaVectorSource = new VectorSource({ features: mapAreas });
-const areaVectorLayer = new VectorLayer({ source: areaVectorSource });
+const areaVectorSource = createAreaVectorSource(mapAreas);
+const areaVectorLayer = createAreaVectorLayer(areaVectorSource);
 map.addLayer(areaVectorLayer);
 
 handleAreaPopups(map, mapAreas);
 positionDrawer(map);
+handleAreaShowHide(map, mapAreas);
 
-function getZoom() {
-  console.log(map.getView().getZoom());
-  return map.getView().getZoom();
-}
-
-mapAreas.forEach((feature) => {
-  const originalStyle = feature.get("originalStyle");
-  if (feature.get("areaType") === "parent") {
-    feature.setStyle(function () {
-      return getZoom() < 2 ? originalStyle : null;
-    });
-  }
-  if (feature.get("areaType") === "child") {
-    feature.setStyle(function () {
-      return getZoom() >= 2 ? originalStyle : null;
-    });
-  }
-});
-
-map.getView().on("change:resolution", function () {
+// Ensure styles update on zoom
+map.getView().on("change:resolution", () => {
   areaVectorSource.changed();
 });

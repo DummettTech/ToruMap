@@ -136,6 +136,29 @@ const coordinate = {
         ],
       ],
     },
+    southWall: {
+      areas: [
+        [
+          [833, 1127],
+          [817, 1104],
+          [917, 1035],
+          [932, 1058],
+        ],
+        [
+          [986, 991],
+          [970, 969],
+          [1037, 920],
+          [1053, 943],
+        ],
+        [
+          [1136, 887],
+          [1120, 866],
+          [1291, 742],
+          [1307, 763],
+        ],
+      ],
+      booths: [],
+    },
   },
   infoStand: [
     [1911, 1220],
@@ -182,6 +205,9 @@ const coordinate = {
   ],
 };
 
+const northWallArtStands = [{ name: "WhitespaceProps", popup: "" }];
+
+// TODO: clean this up so style isn't manually being set
 const parentStaticStyle = new Style({
   fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
   stroke: new Stroke({ color: "green", width: 2 }),
@@ -194,14 +220,24 @@ const parentStaticStyle = new Style({
   }),
 });
 
+const boothStaticStyle = new Style({
+  fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
+  stroke: new Stroke({ color: "green", width: 2 }),
+  text: new Text({
+    text: `Art Booth`,
+    font: "bold 18px sans-serif",
+    fill: new Fill({ color: "#222" }),
+    stroke: new Stroke({ color: "#fff", width: 3 }),
+    overflow: true,
+  }),
+});
+
 // For the parent area
 const northWallAreaFeature = createMapAreaFeature({
   name: "Art Stands",
   coords: coordinate.artStands.northWall.area,
-  popup: `TimeTable:<br>
-      10:00-12:00<br>
-      12:00-14:00<br>
-      14:00-16:00<br>`,
+  popup: `Art Stands<br>
+  Zoom in to view more!`,
   areaType: "booth",
   staticStyle: parentStaticStyle,
 });
@@ -210,17 +246,6 @@ northWallAreaFeature.set("originalStyle", parentStaticStyle);
 
 let northWallArtBooths = [];
 coordinate.artStands.northWall.booths.forEach((booth, idx) => {
-  const boothStaticStyle = new Style({
-    fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
-    stroke: new Stroke({ color: "green", width: 2 }),
-    text: new Text({
-      text: `Art Booth ${idx + 1}`,
-      font: "bold 18px sans-serif",
-      fill: new Fill({ color: "#222" }),
-      stroke: new Stroke({ color: "#fff", width: 3 }),
-      overflow: true,
-    }),
-  });
   const boothFeature = createMapAreaFeature({
     name: `Art Booth ${idx + 1}`,
     coords: booth,
@@ -237,7 +262,22 @@ coordinate.artStands.northWall.booths.forEach((booth, idx) => {
   northWallArtBooths.push(boothFeature);
 });
 
-export const artStands = [northWallAreaFeature];
+let southWallArtBoothAreas = [];
+coordinate.artStands.southWall.areas.forEach((area) => {
+  const areaFeature = createMapAreaFeature({
+    name: "Art Stands",
+    coords: area,
+    popup: `Art Stands<br>
+  Zoom in to view more!`,
+    areaType: "booth",
+    staticStyle: parentStaticStyle,
+  });
+  northWallAreaFeature.set("areaType", "parent");
+  northWallAreaFeature.set("originalStyle", parentStaticStyle);
+  southWallArtBoothAreas.push(areaFeature);
+});
+
+export const artStands = [northWallAreaFeature, ...southWallArtBoothAreas];
 
 export const generalStands = [
   ...northWallArtBooths,

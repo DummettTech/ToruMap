@@ -100,13 +100,13 @@ export const rooms = [
     areaType: "room",
   }),
   createMapAreaFeature({
-    name: "Cosmo\nMain Area",
+    name: "Cosmos AB",
     coords: coordinates.cosmo,
     popup: `Main area for events and activities!`,
     areaType: "room",
   }),
   createMapAreaFeature({
-    name: "Cosmo\nOther Area",
+    name: "Cosmos C",
     coords: coordinates.otherCosmo,
     popup: `Another area for events and activities!`,
     areaType: "room",
