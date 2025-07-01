@@ -4,11 +4,7 @@ import ImageLayer from "ol/layer/Image";
 import Static from "ol/source/ImageStatic";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
-import {
-  convertMapAreas,
-  handleAreaPopups,
-  positionDrawer,
-} from "./lib/helpers";
+import { handleAreaPopups, positionDrawer } from "./lib/helpers";
 import { mapAreas } from "./lib/mapFeatures";
 
 const mapString = false ? "blank_map.jpg" : "map_plan.jpg";
@@ -48,12 +44,33 @@ const map = new Map({
   view: view,
 });
 
-const areaFeatures = convertMapAreas(mapAreas);
-
 // TODO: move into helpers
-const areaVectorSource = new VectorSource({ features: areaFeatures });
+const areaVectorSource = new VectorSource({ features: mapAreas });
 const areaVectorLayer = new VectorLayer({ source: areaVectorSource });
 map.addLayer(areaVectorLayer);
 
-handleAreaPopups(map, areaFeatures);
+handleAreaPopups(map, mapAreas);
 positionDrawer(map);
+
+function getZoom() {
+  console.log(map.getView().getZoom());
+  return map.getView().getZoom();
+}
+
+mapAreas.forEach((feature) => {
+  const originalStyle = feature.get("originalStyle");
+  if (feature.get("areaType") === "parent") {
+    feature.setStyle(function () {
+      return getZoom() < 2 ? originalStyle : null;
+    });
+  }
+  if (feature.get("areaType") === "child") {
+    feature.setStyle(function () {
+      return getZoom() >= 2 ? originalStyle : null;
+    });
+  }
+});
+
+map.getView().on("change:resolution", function () {
+  areaVectorSource.changed();
+});

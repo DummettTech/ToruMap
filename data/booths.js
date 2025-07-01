@@ -1,24 +1,291 @@
-import { createNewMapArea } from "../lib/helpers.js";
+import { createMapAreaFeature } from "../lib/helpers.js";
+import Style from "ol/style/Style";
+import Fill from "ol/style/Fill";
+import Stroke from "ol/style/Stroke";
+import Text from "ol/style/Text";
 
 const coordinate = {
   artStands: {
-    northWall: [
-      [834, 1263],
-      [837, 1234],
-      [1732, 1383],
-      [1725, 1414],
-    ],
+    northWall: {
+      area: [
+        [834, 1263],
+        [837, 1234],
+        [1732, 1383],
+        [1725, 1414],
+      ],
+      booths: [
+        [
+          [833, 1263],
+          [837, 1235],
+          [873, 1241],
+          [868, 1269],
+        ],
+        [
+          [883, 1270],
+          [888, 1243],
+          [924, 1249],
+          [919, 1277],
+        ],
+        [
+          [922, 1278],
+          [927, 1250],
+          [962, 1256],
+          [958, 1284],
+        ],
+        [
+          [972, 1286],
+          [977, 1258],
+          [1013, 1263],
+          [1008, 1292],
+        ],
+        [
+          [1008, 1292],
+          [1013, 1263],
+          [1049, 1269],
+          [1044, 1298],
+        ],
+        [
+          [1060, 1300],
+          [1065, 1273],
+          [1100, 1278],
+          [1096, 1307],
+        ],
+        [
+          [1096, 1307],
+          [1100, 1278],
+          [1139, 1284],
+          [1133, 1313],
+        ],
+        [
+          [1149, 1316],
+          [1155, 1287],
+          [1191, 1293],
+          [1186, 1322],
+        ],
+        [
+          [1186, 1322],
+          [1191, 1293],
+          [1228, 1300],
+          [1223, 1329],
+        ],
+        [
+          [1239, 1331],
+          [1245, 1302],
+          [1280, 1308],
+          [1274, 1337],
+        ],
+        [
+          [1289, 1340],
+          [1295, 1310],
+          [1331, 1316],
+          [1325, 1346],
+        ],
+        [
+          [1337, 1348],
+          [1343, 1318],
+          [1378, 1324],
+          [1373, 1354],
+        ],
+        [
+          [1390, 1357],
+          [1396, 1327],
+          [1433, 1333],
+          [1427, 1363],
+        ],
+        [
+          [1427, 1363],
+          [1433, 1333],
+          [1470, 1339],
+          [1464, 1369],
+        ],
+        [
+          [1479, 1372],
+          [1484, 1342],
+          [1521, 1348],
+          [1515, 1378],
+        ],
+        [
+          [1515, 1378],
+          [1521, 1348],
+          [1558, 1354],
+          [1553, 1385],
+        ],
+        [
+          [1567, 1387],
+          [1572, 1357],
+          [1609, 1363],
+          [1603, 1393],
+        ],
+        [
+          [1603, 1393],
+          [1609, 1363],
+          [1646, 1369],
+          [1641, 1399],
+        ],
+        [
+          [1656, 1402],
+          [1662, 1372],
+          [1696, 1377],
+          [1691, 1408],
+        ],
+        [
+          [1691, 1408],
+          [1696, 1377],
+          [1732, 1384],
+          [1725, 1413],
+        ],
+      ],
+    },
   },
+  infoStand: [
+    [1911, 1220],
+    [1908, 1015],
+    [1935, 1014],
+    [1937, 1221],
+  ],
+  selfieHunt: [
+    [1623, 1272],
+    [1637, 1188],
+    [1749, 1207],
+    [1735, 1290],
+  ],
+  hexcon: [
+    [906, 1154],
+    [1292, 884],
+    [1292, 1218],
+  ],
+  toruship: [
+    [1663, 907],
+    [1663, 810],
+    [1734, 809],
+    [1735, 908],
+  ],
+  medic: [
+    [1475, 689],
+    [1434, 632],
+    [1503, 583],
+    [1544, 638],
+  ],
+  cosplayHelp: [
+    [1589, 612],
+    [1548, 554],
+    [1617, 505],
+    [1658, 561],
+  ],
+  tickets: [
+    [1753, 535],
+    [1696, 458],
+    [1717, 442],
+    [1850, 432],
+    [1866, 454],
+    [1753, 535],
+  ],
 };
 
-export const artStands = [
-  createNewMapArea({
-    name: "Art Stands",
-    coords: coordinate.artStands.northWall,
-    popup: `TimeTable:<br>
-        10:00-12:00<br>
-        12:00-14:00<br>
-        14:00-16:00<br>`,
+const parentStaticStyle = new Style({
+  fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
+  stroke: new Stroke({ color: "green", width: 2 }),
+  text: new Text({
+    text: "Art Stands",
+    font: "bold 18px sans-serif",
+    fill: new Fill({ color: "#222" }),
+    stroke: new Stroke({ color: "#fff", width: 3 }),
+    overflow: true,
+  }),
+});
+
+// For the parent area
+const northWallAreaFeature = createMapAreaFeature({
+  name: "Art Stands",
+  coords: coordinate.artStands.northWall.area,
+  popup: `TimeTable:<br>
+      10:00-12:00<br>
+      12:00-14:00<br>
+      14:00-16:00<br>`,
+  areaType: "booth",
+  staticStyle: parentStaticStyle,
+});
+northWallAreaFeature.set("areaType", "parent");
+northWallAreaFeature.set("originalStyle", parentStaticStyle);
+
+let northWallArtBooths = [];
+coordinate.artStands.northWall.booths.forEach((booth, idx) => {
+  const boothStaticStyle = new Style({
+    fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
+    stroke: new Stroke({ color: "green", width: 2 }),
+    text: new Text({
+      text: `Art Booth ${idx + 1}`,
+      font: "bold 18px sans-serif",
+      fill: new Fill({ color: "#222" }),
+      stroke: new Stroke({ color: "#fff", width: 3 }),
+      overflow: true,
+    }),
+  });
+  const boothFeature = createMapAreaFeature({
+    name: `Art Booth ${idx + 1}`,
+    coords: booth,
+    popup: `Art Booth<br>
+              TimeTable:<br>
+              10:00-12:00<br>
+              12:00-14:00<br>
+              14:00-16:00<br>`,
+    areaType: "booth",
+    staticStyle: boothStaticStyle,
+  });
+  boothFeature.set("areaType", "child");
+  boothFeature.set("originalStyle", boothStaticStyle);
+  northWallArtBooths.push(boothFeature);
+});
+
+export const artStands = [northWallAreaFeature];
+
+export const generalStands = [
+  ...northWallArtBooths,
+  createMapAreaFeature({
+    name: "Info Stand",
+    coords: coordinate.infoStand,
+    popup: "Come here for information about the event, schedule, and more!",
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "Selfie Hunt",
+    coords: coordinate.selfieHunt,
+    popup: `Participate in the selfie hunt!<br>
+            Find all the locations and take selfies with the clues!`,
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "HexCon",
+    coords: coordinate.hexcon,
+    popup: `Join us at HexCon!<br>
+            A place for all things tabletop gaming!`,
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "ToruShip",
+    coords: coordinate.toruship,
+    popup: `Explore the ToruShip!<br>
+            A unique experience for all attendees!`,
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "Medic",
+    coords: coordinate.medic,
+    popup: `Medical assistance available here!<br>
+                For any health-related issues during the event.`,
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "Cosplay Help",
+    coords: coordinate.cosplayHelp,
+    popup: `Need help with your cosplay? Come here!<br>`,
+    areaType: "booth",
+  }),
+  createMapAreaFeature({
+    name: "Tickets",
+    coords: coordinate.tickets,
+    popup: `Get your tickets here!<br>
+            Don't miss out on the fun!`,
     areaType: "booth",
   }),
 ];
