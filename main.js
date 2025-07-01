@@ -11,6 +11,7 @@ import {
 } from "./lib/helpers";
 import { mapAreas } from "./lib/mapFeatures";
 
+const mapString = false ? "blank_map.jpg" : "map_plan.jpg";
 const mapDiv = document.getElementById("map");
 const mapWidth = mapDiv ? mapDiv.clientWidth : window.innerWidth;
 const mapHeight = mapDiv ? mapDiv.clientHeight : window.innerHeight;
@@ -39,7 +40,7 @@ const map = new Map({
   layers: [
     new ImageLayer({
       source: new Static({
-        url: "blank_map.jpg",
+        url: mapString,
         imageExtent: [0, 0, imageWidth, imageHeight],
       }),
     }),
