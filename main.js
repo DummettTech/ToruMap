@@ -2,15 +2,17 @@ import "./style.css";
 import { Map, View } from "ol";
 import ImageLayer from "ol/layer/Image";
 import Static from "ol/source/ImageStatic";
-import VectorLayer from "ol/layer/Vector";
-import VectorSource from "ol/source/Vector";
 import {
-  convertMapAreas,
   handleAreaPopups,
   positionDrawer,
+  createAreaVectorSource,
+  createAreaVectorLayer,
+  getZoom,
+  handleAreaShowHide,
 } from "./lib/helpers";
 import { mapAreas } from "./lib/mapFeatures";
 
+const mapString = true ? "blank_map.jpg" : "map_plan.jpg";
 const mapDiv = document.getElementById("map");
 const mapWidth = mapDiv ? mapDiv.clientWidth : window.innerWidth;
 const mapHeight = mapDiv ? mapDiv.clientHeight : window.innerHeight;
@@ -33,13 +35,12 @@ const view = new View({
   zoom: 0,
 });
 
-// TODO: move into helpers
 const map = new Map({
   target: "map",
   layers: [
     new ImageLayer({
       source: new Static({
-        url: "blank_map.jpg",
+        url: mapString,
         imageExtent: [0, 0, imageWidth, imageHeight],
       }),
     }),
@@ -47,12 +48,15 @@ const map = new Map({
   view: view,
 });
 
-const areaFeatures = convertMapAreas(mapAreas);
-
-// TODO: move into helpers
-const areaVectorSource = new VectorSource({ features: areaFeatures });
-const areaVectorLayer = new VectorLayer({ source: areaVectorSource });
+const areaVectorSource = createAreaVectorSource(mapAreas);
+const areaVectorLayer = createAreaVectorLayer(areaVectorSource);
 map.addLayer(areaVectorLayer);
 
-handleAreaPopups(map, areaFeatures);
+handleAreaPopups(map, mapAreas);
 positionDrawer(map);
+handleAreaShowHide(map, mapAreas);
+
+// Ensure styles update on zoom
+map.getView().on("change:resolution", () => {
+  areaVectorSource.changed();
+});
