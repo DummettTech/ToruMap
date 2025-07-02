@@ -73,7 +73,9 @@ export const rooms = [
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "Sirius\nD&D & Warhammer",
+    name: () => {
+      return `Sirius\nD&D & Warhammer\n${new Date().toLocaleTimeString()}`;
+    },
     coords: coordinates.sirius,
     areaType: "booth",
     popup: `TimeTable:<br>

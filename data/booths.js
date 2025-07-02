@@ -205,8 +205,6 @@ const coordinate = {
   ],
 };
 
-const northWallArtStands = [{ name: "WhitespaceProps", popup: "" }];
-
 // TODO: clean this up so style isn't manually being set
 const parentStaticStyle = new Style({
   fill: new Fill({ color: "rgba(0,128,0,0.2)" }),
@@ -242,23 +240,17 @@ const northWallAreaFeature = createMapAreaFeature({
   staticStyle: parentStaticStyle,
 });
 northWallAreaFeature.set("areaType", "parent");
-northWallAreaFeature.set("originalStyle", parentStaticStyle);
 
 let northWallArtBooths = [];
 coordinate.artStands.northWall.booths.forEach((booth, idx) => {
   const boothFeature = createMapAreaFeature({
     name: `Art Booth ${idx + 1}`,
     coords: booth,
-    popup: `Art Booth<br>
-              TimeTable:<br>
-              10:00-12:00<br>
-              12:00-14:00<br>
-              14:00-16:00<br>`,
+    popup: () => `Current time: ${new Date().toLocaleTimeString()}<br>`,
     areaType: "booth",
     staticStyle: boothStaticStyle,
   });
   boothFeature.set("areaType", "child");
-  boothFeature.set("originalStyle", boothStaticStyle);
   northWallArtBooths.push(boothFeature);
 });
 
@@ -273,7 +265,6 @@ coordinate.artStands.southWall.areas.forEach((area) => {
     staticStyle: parentStaticStyle,
   });
   northWallAreaFeature.set("areaType", "parent");
-  northWallAreaFeature.set("originalStyle", parentStaticStyle);
   southWallArtBoothAreas.push(areaFeature);
 });
 
