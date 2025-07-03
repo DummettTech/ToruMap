@@ -1,5 +1,5 @@
 import { createMapAreaFeature } from "../lib/helpers.js";
-import coordinates from './coordinates/rooms.js'
+import coordinates from "./coordinates/rooms.js";
 
 export const rooms = [
   createMapAreaFeature({

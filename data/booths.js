@@ -3,7 +3,10 @@ import Style from "ol/style/Style";
 import Fill from "ol/style/Fill";
 import Stroke from "ol/style/Stroke";
 import Text from "ol/style/Text";
-import coordinates from './coordinates/booths.js';
+import coordinates from "./coordinates/booths.js";
+import { getCurrentTranslationData } from "../lib/language.js";
+
+const langData = getCurrentTranslationData();
 
 // TODO: clean this up so style isn't manually being set
 const parentStaticStyle = new Style({
@@ -44,9 +47,8 @@ northWallAreaFeature.set("areaType", "parent");
 let northWallArtBooths = [];
 coordinates.artStands.northWall.booths.forEach((booth, idx) => {
   const boothFeature = createMapAreaFeature({
-    name: `Art Booth ${idx + 1}`,
+    ...langData.artStands.northWall.booths[idx],
     coords: booth,
-    popup: () => `Current time: ${new Date().toLocaleTimeString()}<br>`,
     areaType: "booth",
     staticStyle: boothStaticStyle,
   });
@@ -70,9 +72,8 @@ coordinates.artStands.southWall.areas.forEach((area) => {
 let southWallArtBooths = [];
 coordinates.artStands.southWall.booths.forEach((booth, idx) => {
   const boothFeature = createMapAreaFeature({
-    name: `Art Booth ${idx + 1}`,
+    ...langData.artStands.southWall.booths[idx],
     coords: booth,
-    popup: () => `Current time: ${new Date().toLocaleTimeString()}<br>`,
     areaType: "booth",
     staticStyle: boothStaticStyle,
   });
@@ -80,54 +81,47 @@ coordinates.artStands.southWall.booths.forEach((booth, idx) => {
   southWallArtBooths.push(boothFeature);
 });
 
-export const artStands = [northWallAreaFeature, ...northWallArtBooths, ...southWallArtBoothAreas, ...southWallArtBooths];
+export const artStands = [
+  northWallAreaFeature,
+  ...northWallArtBooths,
+  ...southWallArtBoothAreas,
+  ...southWallArtBooths,
+];
 
 export const generalStands = [
   createMapAreaFeature({
-    name: "Info Stand",
+    ...langData.infoStand,
     coords: coordinates.infoStand,
-    popup: "Come here for information about the event, schedule, and more!",
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "Selfie Hunt",
+    ...langData.selfieHunt,
     coords: coordinates.selfieHunt,
-    popup: `Participate in the selfie hunt!<br>
-            Find all the locations and take selfies with the clues!`,
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "HexCon",
+    ...langData.hexcon,
     coords: coordinates.hexcon,
-    popup: `Join us at HexCon!<br>
-            A place for all things tabletop gaming!`,
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "ToruShip",
+    ...langData.toruship,
     coords: coordinates.toruship,
-    popup: `Explore the ToruShip!<br>
-            A unique experience for all attendees!`,
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "Medic",
+    ...langData.medic,
     coords: coordinates.medic,
-    popup: `Medical assistance available here!<br>
-                For any health-related issues during the event.`,
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "Cosplay Help",
+    ...langData.cosplayHelp,
     coords: coordinates.cosplayHelp,
-    popup: `Need help with your cosplay? Come here!<br>`,
     areaType: "booth",
   }),
   createMapAreaFeature({
-    name: "Tickets",
+    ...langData.tickets,
     coords: coordinates.tickets,
-    popup: `Get your tickets here!<br>
-            Don't miss out on the fun!`,
     areaType: "booth",
   }),
 ];
