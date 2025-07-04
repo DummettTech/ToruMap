@@ -3,158 +3,158 @@ export default {
     northWall: {
       booths: [
         {
-          name: "booth 1",
-          popup: "content",
+          name: "DRAKOSHACREATIONS",
         },
         {
-          name: "booth 2",
-          popup: "content",
+          name: "HARUEMPATHY",
         },
         {
-          name: "booth 3",
-          popup: "content",
+          name: "Felaulait",
         },
         {
-          name: "booth 4",
-          popup: "content",
+          name: "Remi",
         },
         {
-          name: "booth 5",
-          popup: "content",
+          name: "VIKOBELO & katja vasileva",
         },
         {
-          name: "booth 6",
-          popup: "content",
+          name: "RaptorJules",
         },
         {
-          name: "booth 7",
-          popup: "content",
+          name: "Super Gay Productions - Shady Stand",
         },
         {
-          name: "booth 8",
-          popup: "content",
+          name: "BunnyBeans",
         },
         {
-          name: "booth 9",
-          popup: "content",
+          name: "Vernilleart",
         },
         {
-          name: "booth 10",
-          popup: "content",
+          name: "Mariiblossom",
         },
         {
-          name: "booth 11",
-          popup: "content",
+          name: "Micamandrake",
         },
         {
-          name: "booth 12",
-          popup: "content",
+          name: "Ingri Nedkvitne",
         },
         {
-          name: "booth 13",
-          popup: "content",
+          name: "Sunncean",
         },
         {
-          name: "booth 14",
-          popup: "content",
+          name: "Doctor Hale's Apothecary and Curiosities",
         },
         {
-          name: "booth 15",
-          popup: "content",
+          name: "Twisted Toadstools",
         },
         {
-          name: "booth 16",
-          popup: "content",
-        },
-        {
-          name: "booth 17",
-          popup: "content",
-        },
-        {
-          name: "booth 18",
-          popup: "content",
-        },
-        {
-          name: "booth 19",
-          popup: "content",
-        },
-        {
-          name: "booth 20",
-          popup: "content",
+          name: "Octogear Illustration",
         },
       ],
     },
     southWall: {
       booths: [
         {
-          name: "booth 21",
-          popup: "content",
+          name: "Neicha's art",
         },
         {
-          name: "booth 22",
-          popup: "content",
+          name: "Mørkalven",
         },
         {
-          name: "booth 23",
-          popup: "content",
+          name: "Oliver Levang",
         },
         {
-          name: "booth 24",
-          popup: "content",
+          name: "Vinter*",
         },
         {
-          name: "booth 25",
-          popup: "content",
+          name: "Fairytales from the North",
         },
         {
-          name: "booth 26",
-          popup: "content",
+          name: "Suncloud Art",
         },
         {
-          name: "booth 27",
-          popup: "content",
+          name: "Hollow Thread",
         },
         {
-          name: "booth 28",
-          popup: "content",
+          name: "FountainHeartShop",
+        },
+      ],
+    },
+    cosmo: {
+      booths: [
+        {
+          name: "Sandviknes Designs",
         },
         {
-          name: "booth 29",
-          popup: "content",
+          name: "Probably Handmade",
         },
         {
-          name: "booth 30",
-          popup: "content",
+          name: "North Hylian",
+        },
+        {
+          name: "Soldugg 3D",
+        },
+        {
+          name: "Erna Klùver",
+        },
+        {
+          name: "Black Crane Creations",
+        },
+        {
+          name: "Emeraldus og Kessi",
+        },
+        {
+          name: '"Linnpuzzle\'s Art" & "Ainthra\'s Craft"',
+        },
+        {
+          name: "What Crosstitch",
+        },
+        {
+          name: "Lev Zy",
+        },
+        {
+          name: "Tanukified",
+        },
+        {
+          name: "Pixiqing",
+        },
+        {
+          name: "KaiSi Amigurumi",
+        },
+        {
+          name: "Greywolf Craft",
+        },
+        {
+          name: "LonaBeCrafting",
+        },
+        {
+          name: "Livvydarling",
+        },
+        {
+          name: "Sivicious' Mockery + Kreturidesku",
         },
       ],
     },
   },
   infoStand: {
     name: "Info Stand",
-    popup: "content",
   },
   selfieHunt: {
     name: "Selfie Hunt",
-    popup: "content",
   },
   hexcon: {
     name: "Hexcon",
-    popup: "content",
   },
   toruship: {
     name: "Toruship",
-    popup: "content",
   },
   medic: {
     name: "Medic",
-    popup: "content",
   },
   cosplayHelp: {
     name: "Cosplay Help",
-    popup: "content",
   },
   tickets: {
     name: "Tickets",
-    popup: "content",
   },
 };
