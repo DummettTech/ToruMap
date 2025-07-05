@@ -21,7 +21,7 @@ const getParentStyle = () => {
       fill,
       stroke,
       text: new Text({
-        text: "Art Stands",
+        text: langData.artStands.group.name,
         font: "bold 18px sans-serif",
         fill: new Fill({ color: "#222" }),
         stroke: new Stroke({ color: "#fff", width: 3 }),

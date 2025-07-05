@@ -1,9 +1,8 @@
 export default {
   artStands: {
     group: {
-      name: "Arcade & Breach Demo",
-      popup: `Enjoy the arcade games!<br>
-                   A place for gamers to have fun!`,
+      name: "Art Stands",
+      popup: `Zoom in to seem more!`,
     },
     northWall: {
       booths: [
@@ -191,37 +190,37 @@ export default {
     },
   ],
   lectureRoom1: {
-    name: "Lecture Room 1",
+    name: "Forelesningsrom 1",
     popup: "TBD",
   },
   lectureRoom2: {
-    name: "Lecture Room 2",
+    name: "Forelesningsrom 2",
     popup: "TBD",
   },
   stage: {
-    name: "Events Stage",
+    name: "Eventstadiet",
     popup: "TBD",
   },
   arcade: {
-    name: "Arcade & Breach Demo",
-    popup: `Enjoy the arcade games!<br>
-              A place for gamers to have fun!`,
+    name: "Arkade og Breach Demo",
+    popup: `Kos deg med arkadespillene!<br>
+        Et sted hvor spillere kan ha det gøy!`,
   },
   toilet: {
-    name: "Toilet",
+    name: "Toalett",
   },
   coolRoom: {
     name: "Polaris\nCool Room",
-    popup: `Area to chill out and relax!`,
+    popup: `Et sted å kjøle seg ned og slappe av!`,
   },
   sirius: {
     name: () => {
-      return `Sirius\nD&D & Warhammer`;
+      return `Sirius\nD&D og Warhammer`;
     },
     popup: `TBD`,
   },
   vega: {
-    name: "Vega\nWorkshop and Quiz",
+    name: "Vega\nWorkshop og Quiz",
     popup: `TBD`,
   },
 };

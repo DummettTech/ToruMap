@@ -1,9 +1,8 @@
 export default {
   artStands: {
     group: {
-      name: "Arcade & Breach Demo",
-      popup: `Enjoy the arcade games!<br>
-                   A place for gamers to have fun!`,
+      name: "Art Stands",
+      popup: `Zoom in to seem more!`,
     },
     northWall: {
       booths: [
@@ -204,8 +203,7 @@ export default {
   },
   arcade: {
     name: "Arcade & Breach Demo",
-    popup: `Enjoy the arcade games!<br>
-              A place for gamers to have fun!`,
+    popup: `Somewhere to cool off and relax!`,
   },
   toilet: {
     name: "Toilet",
