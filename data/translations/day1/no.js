@@ -1,5 +1,10 @@
 export default {
   artStands: {
+    group: {
+      name: "Arcade & Breach Demo",
+      popup: `Enjoy the arcade games!<br>
+                   A place for gamers to have fun!`,
+    },
     northWall: {
       booths: [
         {
@@ -15,13 +20,13 @@ export default {
           name: "Remi",
         },
         {
-          name: "VIKOBELO & katja vasileva",
+          name: "VIKOBELO\n&\nkatja vasileva",
         },
         {
           name: "RaptorJules",
         },
         {
-          name: "Super Gay Productions - Shady Stand",
+          name: "Super Gay Productions -\nShady Stand",
         },
         {
           name: "BunnyBeans",
@@ -36,44 +41,44 @@ export default {
           name: "Micamandrake",
         },
         {
-          name: "Ingri Nedkvitne",
+          name: "Ingri\nNedkvitne",
         },
         {
           name: "Sunncean",
         },
         {
-          name: "Doctor Hale's Apothecary and Curiosities",
+          name: "Doctor Hale's Apothecary\nand\nCuriosities",
         },
         {
-          name: "Twisted Toadstools",
+          name: "Twisted\nToadstools",
         },
         {
-          name: "Octogear Illustration",
+          name: "Octogear\nIllustration",
         },
       ],
     },
     southWall: {
       booths: [
         {
-          name: "Neicha's art",
+          name: "Neicha's\nart",
         },
         {
           name: "Mørkalven",
         },
         {
-          name: "Oliver Levang",
+          name: "Oliver\nLevang",
         },
         {
           name: "Vinter*",
         },
         {
-          name: "Fairytales from the North",
+          name: "Fairytales from\nthe North",
         },
         {
-          name: "Suncloud Art",
+          name: "Suncloud\nArt",
         },
         {
-          name: "Hollow Thread",
+          name: "Hollow\nThread",
         },
         {
           name: "FountainHeartShop",
@@ -83,13 +88,13 @@ export default {
     cosmo: {
       booths: [
         {
-          name: "Sandviknes Designs",
+          name: "Sandviknes\nDesigns",
         },
         {
-          name: "Probably Handmade",
+          name: "Probably\nHandmade",
         },
         {
-          name: "North Hylian",
+          name: "North\nHylian",
         },
         {
           name: "Soldugg 3D",
@@ -101,10 +106,10 @@ export default {
           name: "Black Crane Creations",
         },
         {
-          name: "Emeraldus og Kessi",
+          name: "Emeraldus\nog\nKessi",
         },
         {
-          name: '"Linnpuzzle\'s Art" & "Ainthra\'s Craft"',
+          name: '"Linnpuzzle\'s Art"\n&\n"Ainthra\'s Craft"',
         },
         {
           name: "What Crosstitch",
@@ -122,7 +127,7 @@ export default {
           name: "KaiSi Amigurumi",
         },
         {
-          name: "Greywolf Craft",
+          name: "Greywolf\nCraft",
         },
         {
           name: "LonaBeCrafting",
@@ -131,10 +136,16 @@ export default {
           name: "Livvydarling",
         },
         {
-          name: "Sivicious' Mockery + Kreturidesku",
+          name: "Sivicious' Mockery\n+\nKreturidesku",
         },
       ],
     },
+    otherCosmo: [
+      { name: "Nerdeportalen" },
+      { name: "Outland" },
+      { name: "TikoCosplay" },
+      { name: "Poki-Haven" },
+    ],
   },
   infoStand: {
     name: "Info Stand",
@@ -156,5 +167,61 @@ export default {
   },
   tickets: {
     name: "Tickets",
+  },
+  auroraB: [
+    {
+      name: "DICETROLLS",
+    },
+    {
+      name: "NORWAY GARRISON",
+    },
+    {
+      name: "TFU",
+    },
+  ],
+  auroraC: [
+    {
+      name: "bystudiobeans",
+    },
+    {
+      name: "Ecchi Ink",
+    },
+    {
+      name: "Bizziton craft\n&\nwhitspace props",
+    },
+  ],
+  lectureRoom1: {
+    name: "Lecture Room 1",
+    popup: "TBD",
+  },
+  lectureRoom2: {
+    name: "Lecture Room 2",
+    popup: "TBD",
+  },
+  stage: {
+    name: "Events Stage",
+    popup: "TBD",
+  },
+  arcade: {
+    name: "Arcade & Breach Demo",
+    popup: `Enjoy the arcade games!<br>
+              A place for gamers to have fun!`,
+  },
+  toilet: {
+    name: "Toilet",
+  },
+  coolRoom: {
+    name: "Polaris\nCool Room",
+    popup: `Area to chill out and relax!`,
+  },
+  sirius: {
+    name: () => {
+      return `Sirius\nD&D & Warhammer`;
+    },
+    popup: `TBD`,
+  },
+  vega: {
+    name: "Vega\nWorkshop and Quiz",
+    popup: `TBD`,
   },
 };

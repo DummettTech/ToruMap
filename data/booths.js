@@ -11,29 +11,25 @@ const langData = getCurrentTranslationData();
 const fill = new Fill({ color: colours.art.fill });
 const stroke = new Stroke({ color: colours.art.stroke, width: 2 });
 
+//#region Helpers
 // TODO: clean this up so style isn't manually being set
-const parentStaticStyle = new Style({
-  fill,
-  stroke,
-  text: new Text({
-    text: "Art Stands",
-    font: "bold 18px sans-serif",
-    fill: new Fill({ color: "#222" }),
-    stroke: new Stroke({ color: "#fff", width: 3 }),
-    overflow: true,
-  }),
-});
-
-// For the parent area
-const northWallAreaFeature = createMapAreaFeature({
-  name: "Art Stands",
-  coords: coordinates.artStands.northWall.area,
-  popup: `Art Stands<br>
-  Zoom in to view more!`,
-  areaType: "booth",
-  staticStyle: parentStaticStyle,
-});
-northWallAreaFeature.set("areaType", "parent");
+const getParentStyle = () => {
+  return {
+    ...langData.artStands.group,
+    areaType: "booth",
+    staticStyle: new Style({
+      fill,
+      stroke,
+      text: new Text({
+        text: "Art Stands",
+        font: "bold 18px sans-serif",
+        fill: new Fill({ color: "#222" }),
+        stroke: new Stroke({ color: "#fff", width: 3 }),
+        overflow: true,
+      }),
+    }),
+  };
+};
 
 const getBoothStyle = (text) => {
   return {
@@ -47,10 +43,19 @@ const getBoothStyle = (text) => {
         fill: new Fill({ color: "#222" }),
         stroke: new Stroke({ color: "#fff", width: 3 }),
         overflow: true,
+        scale: 0.8,
       }),
     }),
   };
 };
+//#endregion
+
+//#region North Wall
+const northWallAreaFeature = createMapAreaFeature({
+  ...getParentStyle(),
+  coords: coordinates.artStands.northWall.area,
+});
+northWallAreaFeature.set("areaType", "parent");
 
 let northWallArtBooths = [];
 coordinates.artStands.northWall.booths.forEach((booth, idx) => {
@@ -64,16 +69,13 @@ coordinates.artStands.northWall.booths.forEach((booth, idx) => {
   boothFeature.set("areaType", "child");
   northWallArtBooths.push(boothFeature);
 });
-
+//#endregion
+//#region South Wall
 let southWallArtBoothAreas = [];
 coordinates.artStands.southWall.areas.forEach((area) => {
   const areaFeature = createMapAreaFeature({
-    name: "Art Stands",
+    ...getParentStyle(),
     coords: area,
-    popup: `Art Stands<br>
-  Zoom in to view more!`,
-    areaType: "booth",
-    staticStyle: parentStaticStyle,
   });
   areaFeature.set("areaType", "parent");
   southWallArtBoothAreas.push(areaFeature);
@@ -90,16 +92,13 @@ coordinates.artStands.southWall.booths.forEach((booth, idx) => {
   boothFeature.set("areaType", "child");
   southWallArtBooths.push(boothFeature);
 });
-
+//#endregion
+//#region Main Hall
 let cosmosArtBoothAreas = [];
 coordinates.artStands.cosmos.areas.forEach((area) => {
   const areaFeature = createMapAreaFeature({
-    name: "Art Stands",
+    ...getParentStyle(),
     coords: area,
-    popup: `Art Stands<br>
-  Zoom in to view more!`,
-    areaType: "booth",
-    staticStyle: parentStaticStyle,
   });
   areaFeature.set("areaType", "parent");
   cosmosArtBoothAreas.push(areaFeature);
@@ -116,7 +115,50 @@ coordinates.artStands.cosmos.booths.forEach((booth, idx) => {
   boothFeature.set("areaType", "child");
   cosmosArtBooths.push(boothFeature);
 });
+//#endregion
+//#region Cosmo
 
+let cosmoArtBooths = [];
+coordinates.artStands.otherCosmo.forEach((booth, idx) => {
+  const text = langData.artStands.otherCosmo[idx];
+  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  const boothFeature = createMapAreaFeature({
+    ...getBoothStyle(text),
+    coords: booth,
+    areaType: "booth",
+  });
+  //boothFeature.set("areaType", "child");
+  cosmoArtBooths.push(boothFeature);
+});
+//#endregion
+//#region Aurora B
+let auroraBArtBooths = [];
+coordinates.auroraB.forEach((booth, idx) => {
+  const text = langData.auroraB[idx];
+  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  const boothFeature = createMapAreaFeature({
+    ...getBoothStyle(text),
+    coords: booth,
+    areaType: "booth",
+  });
+  //boothFeature.set("areaType", "child");
+  auroraBArtBooths.push(boothFeature);
+});
+//#endregion
+//#region Aurora C
+let auroraCArtBooths = [];
+coordinates.auroraC.forEach((booth, idx) => {
+  const text = langData.auroraC[idx];
+  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  const boothFeature = createMapAreaFeature({
+    ...getBoothStyle(text),
+    coords: booth,
+    areaType: "booth",
+  });
+  //boothFeature.set("areaType", "child");
+  auroraCArtBooths.push(boothFeature);
+});
+//#endregion
 export const artStands = [
   northWallAreaFeature,
   ...northWallArtBooths,
@@ -124,8 +166,12 @@ export const artStands = [
   ...southWallArtBooths,
   ...cosmosArtBoothAreas,
   ...cosmosArtBooths,
+  ...cosmoArtBooths,
+  ...auroraBArtBooths,
+  ...auroraCArtBooths,
 ];
 
+//#region General Stands
 export const generalStands = [
   createMapAreaFeature({
     ...langData.infoStand,
@@ -168,3 +214,4 @@ export const generalStands = [
     areaType: "tickets",
   }),
 ];
+//#endregion

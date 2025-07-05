@@ -1,63 +1,62 @@
 import { createMapAreaFeature } from "../lib/helpers.js";
 import coordinates from "./coordinates/rooms.js";
-
+import { getCurrentTranslationData } from "../lib/language.js";
+const langData = getCurrentTranslationData();
 export const rooms = [
   createMapAreaFeature({
-    name: "Vega\nWorkshop and Quiz",
+    ...langData.vega,
     coords: coordinates.vega,
-    popup: `TimeTable:<br>
-      Workshop: 10:00-12:00<br>
-      Quiz: 12:00-13:00<br>`,
     areaType: "stage",
   }),
   createMapAreaFeature({
-    name: () => {
-      return `Sirius\nD&D & Warhammer\n${new Date().toLocaleTimeString()}`;
-    },
+    ...langData.sirius,
     coords: coordinates.sirius,
     areaType: "clear",
-    popup: `TimeTable:<br>
-      D&D: 10:00-12:00<br>
-      Warhammer: 12:00-13:00<br>`,
   }),
   createMapAreaFeature({
-    name: "Polaris\nCool Room",
+    ...langData.coolRoom,
     coords: coordinates.polaris,
     areaType: "stage",
-    popup: `Area to chill out and relax!`,
   }),
   createMapAreaFeature({
-    name: "Toilets",
+    ...langData.toilet,
     coords: coordinates.toilets,
     areaType: "clear",
   }),
   createMapAreaFeature({
-    name: "Arcade & Breach Demo",
+    ...langData.arcade,
     coords: coordinates.arcade,
-    popup: `Enjoy the arcade games!<br>
-            A place for gamers to have fun!`,
     areaType: "stage",
   }),
   createMapAreaFeature({
-    name: "Stage\nCurrent Event {eventName} \n Next Event {nextEvent}",
+    ...langData.stage,
     coords: coordinates.cosmo,
-    popup: `Main area for events and activities!`,
     areaType: "stage",
   }),
+  // createMapAreaFeature({
+  //   name: "Cosmos C",
+  //   coords: coordinates.otherCosmo,
+  //   popup: `Another area for events and activities!`,
+  //   areaType: "clear",
+  // }),
+  // createMapAreaFeature({
+  //   name: "Aurora B",
+  //   coords: coordinates.auroraB,
+  //   areaType: "clear",
+  // }),
+  // createMapAreaFeature({
+  //   name: "Aurora C",
+  //   coords: coordinates.auroraC,
+  //   areaType: "clear",
+  // }),
   createMapAreaFeature({
-    name: "Cosmos C",
-    coords: coordinates.otherCosmo,
-    popup: `Another area for events and activities!`,
+    ...langData.lectureRoom1,
+    coords: coordinates.cosmo1,
     areaType: "clear",
   }),
   createMapAreaFeature({
-    name: "Aurora B",
-    coords: coordinates.auroraB,
-    areaType: "clear",
-  }),
-  createMapAreaFeature({
-    name: "Aurora C",
-    coords: coordinates.auroraC,
+    ...langData.lectureRoom2,
+    coords: coordinates.cosmo2,
     areaType: "clear",
   }),
 ];
