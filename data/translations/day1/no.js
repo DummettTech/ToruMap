@@ -471,7 +471,7 @@ export default {
           }),
         },
         {
-          name: "   LonaBeCrafting",
+          name: "LonaBeCrafting",
         },
         {
           name: "Livvydarling",
