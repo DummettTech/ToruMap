@@ -69,7 +69,7 @@ export default {
           name: "Oliver\nLevang",
         },
         {
-          name: "Vinter*",
+          name: "Vinter",
         },
         {
           name: "Fairytales from\nthe North",

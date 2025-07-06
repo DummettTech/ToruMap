@@ -1,3 +1,5 @@
+import { formatBoothPopupText } from "../../../lib/language";
+
 export default {
   artStands: {
     group: {
@@ -68,7 +70,7 @@ export default {
           name: "Oliver\nLevang",
         },
         {
-          name: "Vinter*",
+          name: "Vinter",
         },
         {
           name: "Fairytales from\nthe North",
@@ -141,6 +143,8 @@ export default {
     },
     otherCosmo: [
       { name: "Nerdeportalen" },
+      { name: "Amai" },
+      { name: "Rainbow island" },
       { name: "Outland" },
       { name: "TikoCosplay" },
       { name: "Poki-Haven" },
@@ -170,6 +174,26 @@ export default {
   auroraB: [
     {
       name: "DICETROLLS",
+      popup: formatBoothPopupText({
+        name: "DICETROLLS",
+        socials: [
+          {
+            platform: "Website",
+            name: "Dicetrolls.no",
+            link: "https://www.dicetrolls.no/",
+          },
+          {
+            platform: "TikTok",
+            name: "@dicetrolls0",
+            link: "https://www.tiktok.com/@dicetrolls0",
+          },
+          {
+            platform: "Instagram",
+            link: "https://www.instagram.com/dicetrolls",
+            name: "@dicetrolls",
+          },
+        ],
+      }),
     },
     {
       name: "NORWAY GARRISON",
