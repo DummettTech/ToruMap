@@ -546,7 +546,7 @@ export default {
     name: "Cosplay Help",
   },
   tickets: {
-    name: "Tickets",
+    name: "Billetter og merch",
   },
   auroraB: [
     {
@@ -573,9 +573,9 @@ export default {
       }),
     },
     {
-      name: "NORWAY GARRISON",
+      name: "NORWEGIAN GARRISON",
       popup: formatBoothPopupText({
-        name: "NORWAY GARRISON",
+        name: "NORWEGIAN GARRISON",
         socials: [
           {
             name: "Norwegian Garrison.no",
