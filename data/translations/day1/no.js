@@ -631,11 +631,11 @@ export default {
     },
   ],
   lectureRoom1: {
-    name: "Forelesningsrom 1",
+    name: "Cosmos C",
     popup: "TBD",
   },
   lectureRoom2: {
-    name: "Forelesningsrom 2",
+    name: "Cosmos D",
     popup: "TBD",
   },
   stage: {

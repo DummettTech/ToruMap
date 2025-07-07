@@ -52,11 +52,11 @@ export const rooms = [
   createMapAreaFeature({
     ...langData.lectureRoom1,
     coords: coordinates.cosmo1,
-    areaType: "clear",
+    areaType: "stage",
   }),
   createMapAreaFeature({
     ...langData.lectureRoom2,
     coords: coordinates.cosmo2,
-    areaType: "clear",
+    areaType: "stage",
   }),
 ];
