@@ -663,4 +663,7 @@ export default {
     name: "Vega\nWorkshop and Quiz",
     popup: `TBD`,
   },
+  infoDesk: {
+    name: "Info Desk",
+  },
 };

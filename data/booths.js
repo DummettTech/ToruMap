@@ -213,5 +213,10 @@ export const generalStands = [
     coords: coordinates.tickets,
     areaType: "tickets",
   }),
+  createMapAreaFeature({
+    ...langData.infoDesk,
+    coords: coordinates.infoDesk,
+    areaType: "info",
+  }),
 ];
 //#endregion
