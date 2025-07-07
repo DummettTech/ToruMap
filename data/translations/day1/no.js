@@ -4,7 +4,7 @@ export default {
   artStands: {
     group: {
       name: "Art Stands",
-      popup: `Zoom in to seem more!`,
+      popup: `Zoom inn for mer!`,
     },
     northWall: {
       booths: [
