@@ -639,7 +639,7 @@ export default {
     popup: "TBD",
   },
   stage: {
-    name: "Eventstadiet",
+    name: "Hovedscene",
     popup: "TBD",
   },
   arcade: {
