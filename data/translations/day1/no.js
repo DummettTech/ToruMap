@@ -1,7 +1,3 @@
-import { no } from "../static";
-// rework translation to not need multiple options like this
-// e.g name: translations.openShow
-
 /**
  * Get the schedule for Day 1 in Norwegian.
  * @returns {[key]: { name: string, startTime: string, endTime: string }[]}
@@ -140,5 +136,3 @@ export const schedule = {
   ],
   arcade: [],
 };
-
-export default no;

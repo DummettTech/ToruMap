@@ -1,6 +1,3 @@
-import { formatBoothPopupText } from "../../../lib/language";
-import { en } from "../static";
-
 /**
  * Get the schedule for Day 1 in Norwegian.
  * @returns {[key]: { name: string, startTime: string, endTime: string }[]}
@@ -139,5 +136,3 @@ export const schedule = {
   ],
   arcade: [],
 };
-
-export default en;
