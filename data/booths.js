@@ -22,7 +22,7 @@ const getParentStyle = () => {
       stroke,
       text: new Text({
         text: langData.artStands.group.name,
-        font: "bold 18px sans-serif",
+        font: "18px sans-serif",
         fill: new Fill({ color: "#222" }),
         stroke: new Stroke({ color: "#fff", width: 3 }),
         overflow: true,
@@ -32,6 +32,10 @@ const getParentStyle = () => {
 };
 
 const getBoothStyle = (text) => {
+  if (!text || !text.name) {
+    console.warn("Booth text is missing or invalid:", text);
+    text = { name: "Unknown Booth" }; // Fallback text
+  }
   return {
     ...text,
     staticStyle: new Style({
@@ -60,7 +64,7 @@ northWallAreaFeature.set("areaType", "parent");
 let northWallArtBooths = [];
 coordinates.artStands.northWall.booths.forEach((booth, idx) => {
   const text = langData.artStands.northWall.booths[idx];
-  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  // TODO: Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
   const boothFeature = createMapAreaFeature({
     ...getBoothStyle(text),
     coords: booth,
@@ -121,7 +125,7 @@ coordinates.artStands.cosmos.booths.forEach((booth, idx) => {
 let cosmoArtBooths = [];
 coordinates.artStands.otherCosmo.forEach((booth, idx) => {
   const text = langData.artStands.otherCosmo[idx];
-  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  // TODO: Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
   const boothFeature = createMapAreaFeature({
     ...getBoothStyle(text),
     coords: booth,
@@ -135,7 +139,7 @@ coordinates.artStands.otherCosmo.forEach((booth, idx) => {
 let auroraBArtBooths = [];
 coordinates.auroraB.forEach((booth, idx) => {
   const text = langData.auroraB[idx];
-  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  // TODO: Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
   const boothFeature = createMapAreaFeature({
     ...getBoothStyle(text),
     coords: booth,
@@ -149,7 +153,7 @@ coordinates.auroraB.forEach((booth, idx) => {
 let auroraCArtBooths = [];
 coordinates.auroraC.forEach((booth, idx) => {
   const text = langData.auroraC[idx];
-  // Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
+  // TODO: Instead of mutating the shared boothStaticStyle, create a new Style per booth with the correct text
   const boothFeature = createMapAreaFeature({
     ...getBoothStyle(text),
     coords: booth,
