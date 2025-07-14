@@ -2,6 +2,7 @@ import {
   getScheduleTranslationData,
   getCurrentAndNextData,
   formatBoothPopupText,
+  getPopupSchedule,
 } from "../../lib/languageUtils";
 
 const scheduleData = getScheduleTranslationData();
@@ -638,15 +639,15 @@ export const en = {
   ],
   lectureRoom1: {
     name: () => getCurrentAndNextData("Cosmos C", scheduleData.cosmosC),
-    popup: "TBD",
+    popup: getPopupSchedule("Cosmos C", scheduleData.cosmosC),
   },
   lectureRoom2: {
     name: () => getCurrentAndNextData("Cosmos D", scheduleData.cosmosD),
-    popup: "TBD",
+    popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
   },
   stage: {
     name: () => getCurrentAndNextData("Events Stage", scheduleData.comsos),
-    popup: "TBD",
+    popup: getPopupSchedule("Events Stage", scheduleData.comsos),
   },
   arcade: {
     name: "Arcade & Breach Demo",
@@ -660,14 +661,12 @@ export const en = {
     popup: `Area to chill out and relax!`,
   },
   sirius: {
-    name: () =>
-      getCurrentAndNextData(`Sirius\nD&D & Warhammer`, scheduleData.sirius),
-    popup: "TBD",
+    name: () => getCurrentAndNextData("Sirius", scheduleData.sirius),
+    popup: getPopupSchedule("Sirius", scheduleData.sirius),
   },
   vega: {
-    name: () =>
-      getCurrentAndNextData("Vega\nWorkshop and Quiz", scheduleData.vega),
-    popup: "TBD",
+    name: () => getCurrentAndNextData("Vega", scheduleData.vega),
+    popup: getPopupSchedule("Vega", scheduleData.vega),
   },
   infoDesk: {
     name: "Info Desk",
@@ -836,7 +835,7 @@ export const no = {
         }),
       },
       { name: "Rainbow island" },
-      { name: "Outland" },  
+      { name: "Outland" },
       { name: "TikoCosplay" },
       { name: "Poki-Haven" },
     ],
@@ -886,15 +885,15 @@ export const no = {
   ],
   lectureRoom1: {
     name: () => getCurrentAndNextData("Cosmos C", scheduleData.cosmosC),
-    popup: "TBD",
+    popup: getPopupSchedule("Cosmos C", scheduleData.cosmosC),
   },
   lectureRoom2: {
     name: () => getCurrentAndNextData("Cosmos D", scheduleData.cosmosD),
-    popup: "TBD",
+    popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
   },
   stage: {
     name: () => getCurrentAndNextData("Eventstadiet", scheduleData.comsos),
-    popup: "TBD",
+    popup: getPopupSchedule("Eventstadiet", scheduleData.comsos),
   },
   arcade: {
     name: "Arkade og Breach Demo",
@@ -909,14 +908,12 @@ export const no = {
     popup: `Et sted å kjøle seg ned og slappe av!`,
   },
   sirius: {
-    name: () =>
-      getCurrentAndNextData(`Sirius\nD&D og Warhammer`, scheduleData.sirius),
-    popup: "TBD",
+    name: () => getCurrentAndNextData("Sirius", scheduleData.sirius),
+    popup: getPopupSchedule("Sirius", scheduleData.sirius),
   },
   vega: {
-    name: () =>
-      getCurrentAndNextData("Vega\nWorkshop og Quiz", scheduleData.vega),
-    popup: "TBD",
+    name: () => getCurrentAndNextData("Vega", scheduleData.vega),
+    popup: getPopupSchedule("Vega", scheduleData.vega),
   },
   infoDesk: {
     name: "Info Desk",

@@ -27,10 +27,17 @@ map.getView().on("change:resolution", () => {
 
 setInterval(() => {
   mapAreas.forEach((feature) => {
+    const nameFn = feature.get("nameFn");
+    if (nameFn) {
+      const nameVal = nameFn();
+      feature.set(
+        "name",
+        typeof nameVal === "string" ? nameVal.replace(/<[^>]+>/g, "") : nameVal
+      );
+      feature.set("nameHtml", nameVal);
+    }
     const popupFn = feature.get("popupFn");
     if (popupFn) feature.set("popup", popupFn());
-    const nameFn = feature.get("nameFn");
-    if (nameFn) feature.set("name", nameFn());
   });
   areaVectorSource.changed();
-}, 1000);
+}, 3000);
