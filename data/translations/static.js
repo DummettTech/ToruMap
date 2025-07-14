@@ -860,7 +860,7 @@ export const no = {
     name: "Cosplay Help",
   },
   tickets: {
-    name: "Tickets",
+    name: "Billetter og Merch",
   },
   auroraB: [
     {
