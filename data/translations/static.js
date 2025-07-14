@@ -817,7 +817,26 @@ export const no = {
     },
     otherCosmo: [
       { name: "Nerdeportalen" },
-      { name: "Outland" },
+      {
+        name: "Amai",
+        popup: formatBoothPopupText({
+          name: "Amai",
+          socials: [
+            {
+              name: "@amai_shop",
+              platform: "Instagram",
+              link: "https://www.instagram.com/amai_shop",
+            },
+            {
+              platform: "Facebook",
+              name: "AMAI",
+              link: "https://www.facebook.com/amaishopse/",
+            },
+          ],
+        }),
+      },
+      { name: "Rainbow island" },
+      { name: "Outland" },  
       { name: "TikoCosplay" },
       { name: "Poki-Haven" },
     ],
