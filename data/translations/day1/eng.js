@@ -1,5 +1,5 @@
 /**
- * Get the schedule for Day 1 in Norwegian.
+ * Get the schedule for Day 1 in English.
  * @returns {[key]: { name: string, startTime: string, endTime: string }[]}
  */
 export const schedule = {

@@ -1,137 +1,127 @@
 /**
- * Get the schedule for Day 1 in Norwegian.
+ * Get the schedule for Day 2 in Norwegian.
  * @returns {[key]: { name: string, startTime: string, endTime: string }[]}
  */
 export const schedule = {
   comsos: [
     { name: "Åpningsshow", startTime: "11:00", endTime: "11:30" },
     {
-      name: "Cosplay og Craftmanship\nRunde 1",
-      startTime: "12:30",
-      endTime: "13:30",
-    },
-    {
-      name: "Chibi Catwalk",
-      startTime: "14:30",
-      endTime: "15:00",
-    },
-    {
-      name: "Cosplay Catwalk",
-      startTime: "15:30",
-      endTime: "16:00",
-    },
-    {
-      name: "Cosplay og Craftmanship\nRunde 2",
-      startTime: "16:30",
-      endTime: "15:00",
-    },
-    {
-      name: "Cosplay Catwalk",
-      startTime: "14:30",
-      endTime: "17:00",
-    },
-    {
-      name: "Premieutdeling",
-      startTime: "19:30",
-      endTime: "20:00",
-    },
-  ],
-  cosmosC: [
-    {
-      name: "Break down to avoid breakdowns",
+      name: "FMV presentation",
       startTime: "11:30",
-      endTime: "12:30",
+      endTime: "12:00",
     },
     {
-      name: "Middelalder talk med Julian",
-      startTime: "16:30",
-      endTime: "15:00",
-    },
-    {
-      name: "Kahoot - Middelalderquiz",
-      startTime: "14:30",
-      endTime: "15:30",
-    },
-    {
-      name: "Blocking: Hvordan bevege seg på scenen",
-      startTime: "17:30",
-      endTime: "18:30",
-    },
-  ],
-  cosmosD: [
-    {
-      name: "Speed Friending med Upolert",
-      startTime: "11:30",
-      endTime: "13:00",
-    },
-    {
-      name: "Lace up!",
-      startTime: "13:30",
-      endTime: "14:30",
-    },
-    {
-      name: "K-pop Hangout",
-      startTime: "15:00",
-      endTime: "17:00",
-    },
-    {
-      name: "Kahoot - Witches",
-      startTime: "18:30",
-      endTime: "19:00",
-    },
-  ],
-  vega: [
-    {
-      name: "Anime Quiz",
-      startTime: "12:30",
-      endTime: "13:00",
-    },
-    {
-      name: "K-pop Quiz",
-      startTime: "13:30",
-      endTime: "14:00",
-    },
-    {
-      name: "Karakter design for Dark Fantasy med Ingri",
-      startTime: "14:30",
-      endTime: "15:30",
-    },
-    {
-      name: "Musikk Quiz",
-      startTime: "16:30",
-      endTime: "17:00",
-    },
-    {
-      name: "Anime Quiz",
-      startTime: "17:30",
-      endTime: "18:00",
-    },
-    {
-      name: "FMV-Fremvisning ",
-      startTime: "18:30",
-      endTime: "19:30",
-    },
-  ],
-  sirius: [
-    {
-      name: "Lag din første D&D karakter!",
+      name: "Trondheim Trailer Show",
       startTime: "12:00",
       endTime: "13:00",
     },
     {
-      name: "3D-printing 101",
+      name: "Chibi Catwalk",
       startTime: "13:30",
-      endTime: "14:30",
+      endTime: "14:00",
     },
     {
-      name: "Dragepust - Fra idė til Kickstartersuksess",
-      startTime: "15:30",
+      name: "Gruppecosplay",
+      startTime: "15:00",
+      endTime: "16:00",
+    },
+    {
+      name: "Cosplay Catwalk",
+      startTime: "16:30",
+      endTime: "17:00",
+    },
+    {
+      name: "Random Playdance",
+      startTime: "17:00",
+      endTime: "17:30",
+    },
+    {
+      name: "Premieutdeling",
+      startTime: "18:00",
+      endTime: "19:00",
+    },
+  ],
+  cosmosC: [
+    {
+      name: "Panel kronisk sykdom",
+      startTime: "12:00",
+      endTime: "13:00",
+    },
+    {
+      name: "Bærekraftig cosplay",
+      startTime: "14:00",
+      endTime: "15:00",
+    },
+    {
+      name: "Kahoot Vikings",
+      startTime: "16:00",
       endTime: "16:30",
     },
+  ],
+  cosmosD: [
     {
-      name: "Dragepust Spilling",
-      startTime: "17:30",
-      endTime: "19:00",
+      name: "Cosplay 101 - Et lynkurs i cosplay",
+      startTime: "11:30",
+      endTime: "12:30",
+    },
+    {
+      name: "Rundt bålet: En levende fortelling fra NieR Replicant",
+      startTime: "13:00",
+      endTime: "14:00",
+    },
+    {
+      name: "Vikingtidens sagaomsuste våpen",
+      startTime: "15:00",
+      endTime: "16:00",
+    },
+    {
+      name: "Norsk Cosplay historie",
+      startTime: "16:30",
+      endTime: "17:30",
+    },
+  ],
+  vega: [
+    {
+      name: "Speed friending med Upolert",
+      startTime: "11:00",
+      endTime: "12:00",
+    },
+    {
+      name: "Bli Norges neste manga",
+      startTime: "12:30",
+      endTime: "13:30",
+    },
+    {
+      name: "Gaming Quiz",
+      startTime: "14:00",
+      endTime: "15:30",
+    },
+    {
+      name: "TTRPG - Quiz",
+      startTime: "15:30",
+      endTime: "16:00",
+    },
+    {
+      name: "Gaming Quiz",
+      startTime: "17:00",
+      endTime: "17:30",
+    },
+  ],
+  sirius: [
+    {
+      name: "Dømming Miniatyrmaling-konkurranse",
+      startTime: "11:00",
+      endTime: "12:00",
+    },
+    {
+      name: "Warhammer med Nexus Lyngdal - Intro til Warhammer 40K + Miniatyrmaling",
+      startTime: "12:00",
+      endTime: "16:00",
+    },
+    {
+      name: "Warhammer med Nexus Lyngdal - Utstilling av bidrag i Miniatyrmaling-konkurransen",
+      startTime: "16:00",
+      endTime: "18:00",
     },
   ],
   arcade: [],
