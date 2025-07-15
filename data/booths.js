@@ -22,7 +22,7 @@ const getParentStyle = () => {
       stroke,
       text: new Text({
         text: langData.artStands.group.name,
-        font: "18px sans-serif",
+        font: "16px sans-serif",
         fill: new Fill({ color: "#222" }),
         stroke: new Stroke({ color: "#fff", width: 3 }),
         overflow: true,
@@ -43,7 +43,7 @@ const getBoothStyle = (text) => {
       stroke,
       text: new Text({
         text: text.name,
-        font: "bold 18px sans-serif",
+        font: "bold 16px sans-serif",
         fill: new Fill({ color: "#222" }),
         stroke: new Stroke({ color: "#fff", width: 3 }),
         overflow: true,
