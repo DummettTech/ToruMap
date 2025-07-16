@@ -1,8 +1,7 @@
 import {
   getScheduleTranslationData,
-  getCurrentAndNextData,
   formatBoothPopupText,
-  getPopupSchedule,
+  getNameAndSchedulePopup,
 } from "../../lib/languageUtils";
 
 const scheduleData = getScheduleTranslationData();
@@ -637,18 +636,9 @@ export const en = {
       }),
     },
   ],
-  lectureRoom1: {
-    name: () => getCurrentAndNextData("Cosmos C", scheduleData.cosmosC),
-    popup: getPopupSchedule("Cosmos C", scheduleData.cosmosC),
-  },
-  lectureRoom2: {
-    name: () => getCurrentAndNextData("Cosmos D", scheduleData.cosmosD),
-    popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
-  },
-  stage: {
-    name: () => getCurrentAndNextData("Events Stage", scheduleData.comsos),
-    popup: getPopupSchedule("Events Stage", scheduleData.comsos),
-  },
+  lectureRoom1: getNameAndSchedulePopup("Cosmos C", scheduleData.cosmosC),
+  lectureRoom2: getNameAndSchedulePopup("Cosmos D", scheduleData.cosmosD),
+  stage: getNameAndSchedulePopup("Events Stage", scheduleData.comsos),
   arcade: {
     name: "Arcade & Breach Demo",
     popup: `Somewhere to cool off and relax!`,
@@ -660,14 +650,8 @@ export const en = {
     name: "Polaris\nCool Room",
     popup: `Area to chill out and relax!`,
   },
-  sirius: {
-    name: () => getCurrentAndNextData("Sirius", scheduleData.sirius),
-    popup: getPopupSchedule("Sirius", scheduleData.sirius),
-  },
-  vega: {
-    name: () => getCurrentAndNextData("Vega", scheduleData.vega),
-    popup: getPopupSchedule("Vega", scheduleData.vega),
-  },
+  sirius: getNameAndSchedulePopup("Sirius", scheduleData.sirius),
+  vega: getNameAndSchedulePopup("Vega", scheduleData.vega),
   infoDesk: {
     name: "Info Desk",
   },
@@ -883,18 +867,9 @@ export const no = {
       name: "Bizziton craft\n&\nwhitspace props",
     },
   ],
-  lectureRoom1: {
-    name: () => getCurrentAndNextData("Cosmos C", scheduleData.cosmosC),
-    popup: getPopupSchedule("Cosmos C", scheduleData.cosmosC),
-  },
-  lectureRoom2: {
-    name: () => getCurrentAndNextData("Cosmos D", scheduleData.cosmosD),
-    popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
-  },
-  stage: {
-    name: () => getCurrentAndNextData("Eventstadiet", scheduleData.comsos),
-    popup: getPopupSchedule("Eventstadiet", scheduleData.comsos),
-  },
+  lectureRoom1: getNameAndSchedulePopup("Cosmos C", scheduleData.cosmosC),
+  lectureRoom2: getNameAndSchedulePopup("Cosmos D", scheduleData.cosmosD),
+  stage: getNameAndSchedulePopup("Eventstadiet", scheduleData.comsos),
   arcade: {
     name: "Arkade og Breach Demo",
     popup: `Kos deg med arkadespillene!<br>
@@ -907,14 +882,8 @@ export const no = {
     name: "Polaris\nCool Room",
     popup: `Et sted å kjøle seg ned og slappe av!`,
   },
-  sirius: {
-    name: () => getCurrentAndNextData("Sirius", scheduleData.sirius),
-    popup: getPopupSchedule("Sirius", scheduleData.sirius),
-  },
-  vega: {
-    name: () => getCurrentAndNextData("Vega", scheduleData.vega),
-    popup: getPopupSchedule("Vega", scheduleData.vega),
-  },
+  sirius: getNameAndSchedulePopup("Sirius", scheduleData.sirius),
+  vega: getNameAndSchedulePopup("Vega", scheduleData.vega),
   infoDesk: {
     name: "Info Desk",
   },
