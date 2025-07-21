@@ -336,7 +336,7 @@ export const en = {
         {
           name: "Probably\nHandmade",
           popup: formatBoothPopupText({
-            name: "",
+            name: "Probably Handmade",
             socials: [
               {
                 platform: "Instagram",
@@ -435,7 +435,7 @@ export const en = {
         {
           name: "Lev Zy",
           popup: formatBoothPopupText({
-            name: "",
+            name: "Lev Zy",
             socials: [
               {
                 platform: "TikTok",
@@ -1002,7 +1002,7 @@ export const no = {
         {
           name: "Probably\nHandmade",
           popup: formatBoothPopupText({
-            name: "",
+            name: "Probably Handmade",
             socials: [
               {
                 platform: "Instagram",
@@ -1101,7 +1101,7 @@ export const no = {
         {
           name: "Lev Zy",
           popup: formatBoothPopupText({
-            name: "",
+            name: "Lev Zy",
             socials: [
               {
                 platform: "TikTok",
