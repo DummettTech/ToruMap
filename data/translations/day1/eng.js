@@ -44,13 +44,13 @@ export const schedule = {
     },
     {
       name: "Medieval talk with Julian",
-      startTime: "16:30",
-      endTime: "15:00",
+      startTime: "14:30",
+      endTime: "15:30",
     },
     {
       name: "Kahoot - Medieval Quiz",
-      startTime: "14:30",
-      endTime: "15:30",
+      startTime: "16:00",
+      endTime: "16:30",
     },
     {
       name: "Blocking: How to move on stage",
@@ -124,13 +124,8 @@ export const schedule = {
       endTime: "14:30",
     },
     {
-      name: "Dragon Breath - From idea to Kickstarter success",
+      name: "Pokemon VG tournament",
       startTime: "15:30",
-      endTime: "16:30",
-    },
-    {
-      name: "Dragepust Gaming",
-      startTime: "17:30",
       endTime: "19:00",
     },
   ],

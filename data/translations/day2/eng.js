@@ -27,8 +27,8 @@ export const schedule = {
     },
     {
       name: "Cosplay Catwalk",
-      startTime: "16:30",
-      endTime: "17:00",
+      startTime: "16:00",
+      endTime: "16:30",
     },
     {
       name: "Random Playdance",
@@ -43,7 +43,7 @@ export const schedule = {
   ],
   cosmosC: [
     {
-      name: "Chronic Disease Panel",
+      name: "Cosplay and Health",
       startTime: "12:00",
       endTime: "13:00",
     },
@@ -87,7 +87,7 @@ export const schedule = {
       endTime: "12:00",
     },
     {
-      name: "Become Norway's Next manga",
+      name: "Become Norway's Next manga-ka",
       startTime: "12:30",
       endTime: "13:30",
     },
