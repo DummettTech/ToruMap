@@ -649,6 +649,10 @@ export const en = {
     name: () => getCurrentAndNextData("Stage", scheduleData.comsos),
     popup: getPopupSchedule("Stage", scheduleData.comsos),
   },
+  clothes: {
+    name: "Coat Room",
+    popup: "Storage for bags, outerwear etc.",
+  },
   arcade: {
     name: "Arcade & Breach Demo",
     popup: `Enjoy Arcade machines, pinball and a demo of a VR game from <a href="https://breachvr.com/" target="_blank">Breach!</a>`,
@@ -1254,6 +1258,10 @@ export const no = {
   stage: {
     name: () => getCurrentAndNextData("Stage", scheduleData.comsos),
     popup: getPopupSchedule("Stage", scheduleData.comsos),
+  },
+  clothes: {
+    name: "Garderobe",
+    popup: "Oppbevaring for vesker, yttertøy osv.",
   },
   arcade: {
     name: "Arkade og Breach Demo",

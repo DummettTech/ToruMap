@@ -33,6 +33,11 @@ export const rooms = [
     coords: coordinates.cosmo,
     areaType: "stage",
   }),
+  createMapAreaFeature({
+    ...langData.clothes,
+    coords: coordinates.clothes,
+    areaType: "medic",
+  }),
   // createMapAreaFeature({
   //   name: "Cosmos C",
   //   coords: coordinates.otherCosmo,
