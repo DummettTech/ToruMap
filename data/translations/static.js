@@ -646,8 +646,8 @@ export const en = {
     popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
   },
   stage: {
-    name: () => getCurrentAndNextData("Events Stage", scheduleData.comsos),
-    popup: getPopupSchedule("Events Stage", scheduleData.comsos),
+    name: () => getCurrentAndNextData("Stage", scheduleData.comsos),
+    popup: getPopupSchedule("Stage", scheduleData.comsos),
   },
   arcade: {
     name: "Arcade & Breach Demo",
@@ -1252,8 +1252,8 @@ export const no = {
     popup: getPopupSchedule("Cosmos D", scheduleData.cosmosD),
   },
   stage: {
-    name: () => getCurrentAndNextData("Eventstadiet", scheduleData.comsos),
-    popup: getPopupSchedule("Eventstadiet", scheduleData.comsos),
+    name: () => getCurrentAndNextData("Stage", scheduleData.comsos),
+    popup: getPopupSchedule("Stage", scheduleData.comsos),
   },
   arcade: {
     name: "Arkade og Breach Demo",
