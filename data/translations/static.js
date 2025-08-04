@@ -651,7 +651,7 @@ export const en = {
   },
   arcade: {
     name: "Arcade & Breach Demo",
-    popup: `Somewhere to cool off and relax!`,
+    popup: `Enjoy Arcade machines, pinball and a demo of a VR game from <a href="https://breachvr.com/" target="_blank">Breach!</a>`,
   },
   toilet: {
     name: "Toilet",
@@ -1257,8 +1257,7 @@ export const no = {
   },
   arcade: {
     name: "Arkade og Breach Demo",
-    popup: `Kos deg med arkadespillene!<br>
-        Et sted hvor spillere kan ha det gøy!`,
+    popup: `Kos deg med arkadespill, flipperspill og en demonstrasjon av et VR-spill fra <a href="https://breachvr.com/" target="_blank">Breach!</a>`,
   },
   toilet: {
     name: "Toalett",
