@@ -213,7 +213,7 @@ export const generalStands = [
     areaType: "cosplayMedic",
   }),
   createMapAreaFeature({
-    ...langData.tickets,
+    ...langData.ticketsAndMerch,
     coords: coordinates.tickets,
     areaType: "tickets",
   }),

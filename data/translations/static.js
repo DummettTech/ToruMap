@@ -553,6 +553,9 @@ export const en = {
     name: "Cosplay Help",
   },
   tickets: {
+    name: "Tickets",
+  },
+  ticketsAndMerch: {
     name: "Tickets & Merch",
   },
   auroraB: [
@@ -1223,6 +1226,9 @@ export const no = {
     name: "Cosplay Help",
   },
   tickets: {
+    name: "Billetter",
+  },
+  ticketsAndMerch: {
     name: "Billetter og Merch",
   },
   auroraB: [
