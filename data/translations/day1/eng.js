@@ -65,7 +65,7 @@ export const schedule = {
       endTime: "13:00",
     },
     {
-      name: "Lace up!",
+      name: "Sustainable Cosplay",
       startTime: "13:30",
       endTime: "14:30",
     },
