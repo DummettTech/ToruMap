@@ -12,6 +12,6 @@
     "vite": "latest"
   },
   "dependencies": {
-    "ol": "^10.0.0"
+    "ol": "^10.7.0"
   }
 }
